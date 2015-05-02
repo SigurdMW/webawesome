@@ -1,0 +1,519 @@
+/*
+Theme Name: webawesome
+Theme URI: http://webawesome.no/
+Author: Sigurd Moland Wahl
+Author URI: http://webawesome.no/
+Description: Thene developed for web awesome
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: webawesome
+Tags:
+
+webawesome is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+*/
+
+/* TEST */
+
+/* /TEST */
+
+
+html,
+body {
+    font-family:"RobotoDraft","Roboto",sans-serif;
+    font-size:18px;
+    background-color:#f7f7f7;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+}
+
+/* loading animation fix with fixed header */
+.animsition {
+    position:static;
+}
+
+
+h1,h2,h3,h4,h5 {
+    color:#5C6BC0;
+}
+
+h1 small,
+.page-title small {
+    color:#C5CAE9;
+    font-size:.75em;
+}
+
+blockquote {
+    border-left-color:#FF5722;
+}
+
+
+/* unvisited link */
+a,
+.link-link,
+.visited-link,
+.active-link,
+.hover-link {
+     font-weight:bold;
+}
+
+a:link,
+.link-link {
+    color:#1A237E;
+}
+
+/* visited link */
+a:visited,
+.visited-link {
+    color:#1A237E;
+}
+
+/* mouse over link */
+a:hover,
+.hover-link{
+    color: #3F51B5;
+}
+
+/* selected link */
+a:active,
+.active-link {
+    color: #304FFE;
+}
+
+.form-control {
+    -moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+    font-size:1em;
+}
+
+.form-control:focus,
+.form-control:active {
+    box-shadow: none;
+}
+
+label {
+    font-weight: normal;
+    font-size:.8em;
+}
+
+::-webkit-input-placeholder {
+   font-style: italic;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   font-style: italic;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   font-style: italic;
+}
+
+:-ms-input-placeholder {  
+   font-style: italic;
+}
+
+.page-header {
+    background-color:#3F51B5;
+    width:100%;
+    margin:0;
+    position:absolute;
+    top:0;
+    left:0;
+   /* transition: all 0.4s ease;*/
+    z-index:998;
+    height:300px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.26);
+    border:0;
+}
+
+.menu-container {
+    position:relative;
+    max-width:1260px;
+    padding:2em 0;
+    max-height:300px;
+    margin:0 auto;
+    height:100%;
+    transition: all 0.4s ease;
+}
+
+.css-table {
+    display:table;
+    width:100%;
+    height:100%;
+}
+
+.css-table-cell {
+    display:table-cell;
+}
+
+.page-header .css-table-cell {
+    vertical-align: middle;
+}
+
+.page-header .css-table-cell:nth-child(1) {
+    width:60px;
+}
+
+.page-title {
+    font-size:1.4em;
+}
+
+.page-header .page-title-web {
+    display:block;
+    margin:0;
+    line-height:1em;
+    color:#19236F;/*#283593;*/
+    font-weight:normal;
+    text-transform: lowercase;
+}
+
+.page-header .page-title-awesome {
+    display:block;
+    margin:0;
+    font-size:2em;
+    color:#fff;
+    font-weight:bold;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.header-menu-button {
+    background: url(img/menu.svg) no-repeat center center;
+    background-size: 60% auto;
+    background-color:transparent;
+    width:40px;
+    height:40px;
+    z-index:999;
+    position:relative;
+}
+
+.header-menu-button:hover {
+    outline:1px solid #7986CB;
+}
+
+.header-menu-button:focus,
+.header-menu-button:active {
+    /*outline:0;*/
+}
+
+.page-header .dropdown-menu {
+    top:100%;
+    left:0;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top:0;
+    margin-top:7px;
+    font-size:1em;
+    min-width:250px;
+    width: 100%;
+    padding:0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22), 0 14px 56px rgba(0, 0, 0, 0.25);
+}
+
+.dropdown-menu a:link,
+.dropdown-menu a:visited,
+.dropdown-menu a:hover,
+.dropdown-menu a:active {
+    color:#1A237E;
+}
+
+
+.dropdown-menu>div>ul {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+}
+
+.dropdown-menu>div>ul>li>a {
+    padding:1em;
+    display:block;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.dropdown-menu>div>ul>li>a:hover {
+    background-color:#7986CB;
+    color:#fff;
+}
+
+.current-menu-item a:link,
+.current-menu-item a:link,
+.current-menu-item a:visited,
+.current-menu-item a:hover,
+.current-menu-item a:active {
+    background-color:#304FFE;
+    color:#fff;
+}
+
+
+
+.dropdown-menu:before {
+    content:"";
+	width: 0; 
+	height: 0;  
+    position:absolute;
+    top:-10px;
+    left:10px;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #fff;
+}
+
+/* -- header, sticky state -- */
+
+.sticky-header .menu-container {
+    height:60px;
+    padding:0;
+}
+
+.page-header.sticky-header {
+    position: fixed;
+    height:60px;
+}
+
+.page-header.sticky-header .css-table {
+    font-size:1em;
+}
+
+.page-header.sticky-header .page-title {
+    font-size:1em;
+}
+
+.page-header.sticky-header .dropdown-waMenu {
+    top:0;
+    left:0;
+}
+
+/* -- /header, sticky state -- */
+
+
+.container {
+    max-width:1160px;
+}
+
+.container p {
+    margin-bottom:30px;
+}
+
+.container.main-content {
+    margin-top:360px;
+    /*margin-bottom:4em;*/
+}
+
+.scrollToTop {
+    position: fixed;
+    bottom:8px;
+    right:8px;
+    background-color: rgba(0,0,0,.2);
+    background-image:url();
+    padding:1em;
+    display:none;
+    z-index:999;
+}
+
+.main-content p {
+    max-width:760px;
+}
+
+/* general styles */
+
+.container {
+    position:relative;
+}
+
+.btn-wa {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    -o-appearance:none;
+    appearance:none;
+    cursor: pointer;
+    border:none;
+}
+
+/* /general styles */
+
+.material-box {
+    /* background-color:#fff;
+    box-shadow:1px 1px 1px rgba(0,0,0,.2),-1px 1px 1px rgba(0,0,0,.2),1px -1px 1px rgba(0,0,0,.2),-1px -1px 1px rgba(0,0,0,.2);
+    border:1px solid rgba(0,0,0,.1);
+    padding:2em;*/
+    margin-bottom:2em;
+}
+
+.frontpage-single-post {
+   
+}
+    .frontpage-single-post h2 {
+        font-weight:bold;
+        color:#5C6BC0;
+        margin-bottom:0;
+    }
+    
+    .post-author {
+        display:table;
+        padding:.5em 0;
+        margin:30px 0;
+    }
+
+    .post-author-image {
+        display:table-cell;
+        background-image:url("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/4/000/15b/3e6/3d9f405.jpg");
+        background-repeat:no-repeat;
+        background-size:cover;
+        width:50px;
+        height:50px;
+        border-radius: 50%;
+    }
+
+    .post-author-name {
+        display:table-cell;
+        padding:.4em 1em 0;
+        font-size:.9em;
+        color:rgba(0,0,0,.54);
+        margin-top:-3px;
+        white-space: nowrap;
+        vertical-align: top;
+    }
+
+/*
+#   STANDARD ELEMENTS
+*/
+
+p.lead {
+    font-size:20px;
+}
+
+hr {
+    border-color:rgba(0,0,0,.12);
+}
+
+/*
+#   /STANDARD ELEMENTS
+*/
+
+/*
+#   FOOTER STYLES
+*/
+
+footer {
+    background-color:#263238;
+    padding:5em 0 0;
+    color:#fff;
+    margin-top:3em;
+}
+
+.footer-bottom-text {
+    text-align:center;
+    padding:4em 0;
+}
+
+.widget-area a:link,
+.widget-area a:visited,
+.widget-area a:hover,
+.widget-area a:active {
+    color:#fff;
+    font-weight: normal;
+}
+
+.widget-area .form-control {
+    background-color:#455A64;
+    border:1px solid transparent;
+    color:#fff;
+    font-weight: normal;
+}
+
+.widget-area .widget-title {
+    margin-top:0;
+}
+
+.widget-area .form-control:focus,
+.widget-area .form-control:active {
+    border:1px solid rgba(255,255,255,.3);
+}
+
+.widget-area .col-md-6 {
+    margin-bottom:30px;
+}
+
+footer .widget-area .btn-wa {
+    display:none;
+}
+
+footer .form-control::-webkit-input-placeholder {
+   color:#fff;
+}
+
+footer .form-control:-moz-placeholder { /* Firefox 18- */
+   color:#fff;
+}
+
+footer .form-control::-moz-placeholder {  /* Firefox 19+ */
+   color:#fff;
+}
+
+footer .form-control:-ms-input-placeholder {  
+   color:#fff;
+}
+
+
+
+
+/*
+#   /FOOTER STYLES
+*/
+
+/*
+#
+#   PLUGIN OVERRIDE STYLES
+#
+*/
+.crayon-theme-ado {
+    -moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+.crayon-theme-ado .crayon-table {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+/*
+#
+#   /PLUGIN OVERRIDE STYLES
+#
+*/
+
+/*
+#
+#   MEDIA QUERIES
+#
+*/
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .page-title {
+       font-size:3em;
+    }
+    
+    .post-author-name {
+        font-size:1em;
+         padding:.25em 1em 0;
+    }
+    
+    
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width:1200px) {
+}
